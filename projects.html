@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects | Shri Ganesha Infra</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_32x32.png" />
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Segoe UI, Arial, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(90deg,#020c17,#041a2e,#020c17);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .navbar{
+      width:100%;
+      padding:18px 70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      left:0;
+      background:rgba(3,13,25,0.88);
+      backdrop-filter:blur(10px);
+      z-index:999;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:white;
+    }
+
+    .brand-logo{
+      width:56px;
+      height:56px;
+      object-fit:contain;
+      border-radius:12px;
+    }
+
+    .brand-text h1{
+      font-size:18px;
+      font-weight:700;
+    }
+
+    .brand-text span{
+      font-size:13px;
+      color:#9ca3af;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:26px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:white;
+      font-size:15px;
+      opacity:0.88;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#f5c76b;
+    }
+
+    .nav-btn{
+      background:#f5c76b;
+      color:black !important;
+      padding:10px 20px;
+      border-radius:24px;
+      font-weight:600;
+    }
+
+    .hero{
+      padding:70px 70px 30px;
+      text-align:center;
+    }
+
+    .hero h2{
+      font-size:48px;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      max-width:780px;
+      margin:0 auto;
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    .highlight{
+      color:#f5c76b;
+    }
+
+    .projects-section{
+      padding:30px 70px 80px;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+    }
+
+    .project-card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.35s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .project-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(245,199,107,0.35);
+      box-shadow:0 16px 36px rgba(0,0,0,0.25);
+    }
+
+    .project-card img{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .project-content{
+      padding:18px;
+    }
+
+    .project-content h3{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .location{
+      color:#f5c76b;
+      font-size:14px;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .project-content p{
+      color:#cbd5e1;
+      font-size:14px;
+      line-height:1.6;
+      margin-bottom:14px;
+    }
+
+    .project-meta{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .meta-box{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:12px;
+      padding:10px 12px;
+    }
+
+    .meta-box strong{
+      display:block;
+      color:#f5c76b;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+
+    .meta-box span{
+      font-size:13px;
+      color:#dbe4ee;
+    }
+
+    .view-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#f5c76b;
+      color:#111;
+      padding:10px 16px;
+      border-radius:22px;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .footer{
+      padding:24px;
+      text-align:center;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 900px){
+      .navbar{
+        flex-direction:column;
+        gap:16px;
+        padding:16px 20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero{
+        padding:40px 20px 20px;
+      }
+
+      .hero h2{
+        font-size:34px;
+      }
+
+      .projects-section{
+        padding:20px 20px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Shri Ganesha Infra Logo" class="brand-logo">
+      <div class="brand-text">
+        <h1>Shri Ganesha Infra</h1>
+        <span>Premium Real Estate in Raipur</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#enquiry" class="nav-btn">Send Enquiry</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Explore <span class="highlight">50+ Premium Projects</span></h2>
+    <p>
+      Browse our featured residential, plotted, and commercial developments with location details,
+      project highlights, pricing category, and status. Replace these demo images and text with your real project photos.
+    </p>
+  </section>
+
+  <section class="projects-section">
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80" alt="Project 1">
+        <div class="project-content">
+          <h3>Ganesha Greens</h3>
+          <span class="location">Raipur, Chhattisgarh</span>
+          <p>Premium residential plots with gated entry, wide roads, green zones, and fast city connectivity.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Residential Plot</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Available</span></div>
+            <div class="meta-box"><strong>Size</strong><span>1000–2400 sq.ft.</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Project 2">
+        <div class="project-content">
+          <h3>Shri Residency</h3>
+          <span class="location">New Raipur</span>
+          <p>Well-planned residential homes designed for families seeking comfort, access, and future growth value.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Villa / Home</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Booking Open</span></div>
+            <div class="meta-box"><strong>BHK</strong><span>2 / 3 BHK</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="Project 3">
+        <div class="project-content">
+          <h3>Infra Business Hub</h3>
+          <span class="location">Central Raipur</span>
+          <p>Commercial spaces built for offices, retail outlets, and growth-focused business investment opportunities.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Commercial</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Limited Units</span></div>
+            <div class="meta-box"><strong>Size</strong><span>500–1800 sq.ft.</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80" alt="Project 4">
+        <div class="project-content">
+          <h3>Golden Avenue</h3>
+          <span class="location">VIP Road, Raipur</span>
+          <p>Luxury project with landscaped surroundings, modern layout planning, and excellent road access.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Premium Plot</span></div>
+            <div class="meta-box"><strong>Status</strong><span>New Launch</span></div>
+            <div class="meta-box"><strong>Size</strong><span>1200–3000 sq.ft.</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&fit=crop&w=1200&q=80" alt="Project 5">
+        <div class="project-content">
+          <h3>Royal Township</h3>
+          <span class="location">Sejbahar, Raipur</span>
+          <p>Township-style development offering community comfort, long-term value, and ideal family living.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Township Plot</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Available</span></div>
+            <div class="meta-box"><strong>Amenity</strong><span>Park + Road</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Project 6">
+        <div class="project-content">
+          <h3>Skyline Homes</h3>
+          <span class="location">Mowa, Raipur</span>
+          <p>Contemporary homes with elegant design, practical floor plans, and premium neighborhood appeal.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Residential Home</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Ready to Visit</span></div>
+            <div class="meta-box"><strong>BHK</strong><span>3 / 4 BHK</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Duplicate more cards below to reach 50+ -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="Project 7">
+        <div class="project-content">
+          <h3>Emerald County</h3>
+          <span class="location">Ring Road, Raipur</span>
+          <p>Fast-growing plotted development suitable for residential construction and future appreciation.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Plot</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Open</span></div>
+            <div class="meta-box"><strong>Size</strong><span>900–2200 sq.ft.</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Project 8">
+        <div class="project-content">
+          <h3>Lotus Enclave</h3>
+          <span class="location">Bhatagaon</span>
+          <p>Modern living project with connectivity, secure environment, and excellent development potential.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Residential</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Available</span></div>
+            <div class="meta-box"><strong>BHK</strong><span>2 / 3 BHK</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Project 9">
+        <div class="project-content">
+          <h3>Urban Square</h3>
+          <span class="location">GE Road</span>
+          <p>Commercial property project perfect for shops, offices, and rental-income-focused buyers.</p>
+          <div class="project-meta">
+            <div class="meta-box"><strong>Type</strong><span>Commercial</span></div>
+            <div class="meta-box"><strong>Status</strong><span>Launching</span></div>
+            <div class="meta-box"><strong>Use</strong><span>Retail / Office</span></div>
+            <div class="meta-box"><strong>Price</strong><span>Starting from ₹XX</span></div>
+          </div>
+          <a href="#" class="view-btn">View Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 Shri Ganesha Infra. All rights reserved.
+  </footer>
+
+</body>
+</html>
